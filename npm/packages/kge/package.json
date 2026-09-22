@@ -3,12 +3,29 @@
   "version": "0.1.0",
   "description": "Holographic knowledge-graph embeddings (HolE / RotatE) for ruvector: link prediction, relation composition and compositional queries, with ANN candidate retrieval over HNSW. Native (napi-rs) with a WASM fallback; no network.",
   "license": "MIT",
-  "repository": { "type": "git", "url": "https://github.com/ruvnet/ruvector.git", "directory": "npm/packages/kge" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruvnet/ruvector.git",
+    "directory": "npm/packages/kge"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "bin": { "kge": "bin/cli.js" },
-  "files": ["dist", "bin", "index.js", "index.d.ts", "README.md", "docs/adr", "wasm", "native"],
-  "engines": { "node": ">=18.0.0" },
+  "bin": {
+    "kge": "bin/cli.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "docs/adr",
+    "wasm",
+    "native"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "keywords": [
     "knowledge-graph",
     "embeddings",
@@ -26,13 +43,16 @@
     "local-first"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "build:napi": "napi build --platform --release --cargo-cwd ../../../crates/ruvector-kge-ffi",
+    "build": "node init && tsc -p tsconfig.json",
+    "build:napi": "node init && napi build --platform --release --cargo-cwd ../../../crates/ruvector-kge-ffi",
     "typecheck": "tsc --noEmit -p tsconfig.typetest.json",
     "test": "node --test test/*.test.mjs",
     "test:all": "tsc -p tsconfig.json && tsc --noEmit -p tsconfig.typetest.json && node --test test/*.test.mjs",
     "prepublishOnly": "tsc -p tsconfig.json",
     "bench": "node bench/run.mjs"
   },
-  "devDependencies": { "@napi-rs/cli": "^2.18.0", "typescript": "^5.9.3" }
+  "devDependencies": {
+    "@napi-rs/cli": "^2.18.0",
+    "typescript": "^5.9.3"
+  }
 }

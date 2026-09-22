@@ -23,12 +23,12 @@
     "src/indexeddb.js"
   ],
   "scripts": {
-    "build": "npm run build:web && npm run build:simd && npm run build:bundler",
-    "build:web": "wasm-pack build --target web --out-dir pkg --release",
-    "build:simd": "wasm-pack build --target web --out-dir pkg-simd --release -- --features simd",
-    "build:node": "wasm-pack build --target nodejs --out-dir pkg-node --release",
-    "build:bundler": "wasm-pack build --target bundler --out-dir pkg-bundler --release",
-    "build:all": "npm run build && npm run build:node && npm run build:bundler",
+    "build": "node init && npm run build:web && npm run build:simd && npm run build:bundler",
+    "build:web": "node init && wasm-pack build --target web --out-dir pkg --release",
+    "build:simd": "node init && wasm-pack build --target web --out-dir pkg-simd --release -- --features simd",
+    "build:node": "node init && wasm-pack build --target nodejs --out-dir pkg-node --release",
+    "build:bundler": "node init && wasm-pack build --target bundler --out-dir pkg-bundler --release",
+    "build:all": "node init && npm run build && npm run build:node && npm run build:bundler",
     "test": "wasm-pack test --headless --chrome",
     "test:adapter": "node --test tests/adapter.test.mjs",
     "test:firefox": "wasm-pack test --headless --firefox",

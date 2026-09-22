@@ -6,10 +6,10 @@
   "main": "index.js",
   "types": "types.ts",
   "scripts": {
-    "build": "wasm-pack build .. --target web --out-dir web/pkg --release -- --features wasm",
-    "build:dev": "wasm-pack build .. --target web --out-dir web/pkg --dev -- --features wasm",
+    "build": "node init && wasm-pack build .. --target web --out-dir web/pkg --release -- --features wasm",
+    "build:dev": "node init && wasm-pack build .. --target web --out-dir web/pkg --dev -- --features wasm",
     "serve": "python3 -m http.server 8080",
-    "dev": "npm run build:dev && npm run serve",
+    "dev": "node init && npm run build:dev && npm run serve",
     "test": "echo \"No tests yet\""
   },
   "keywords": [

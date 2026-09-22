@@ -26,9 +26,9 @@
     "wasm"
   ],
   "scripts": {
-    "build": "npm run build:wasm && npm run build:sdk",
-    "build:wasm": "cd ../../../crates/rvlite && wasm-pack build --target web --release && cp -r pkg/* ../../npm/packages/rvlite/dist/wasm/",
-    "build:sdk": "tsc && esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --format=cjs && esbuild src/index.ts --bundle --platform=node --outfile=dist/index.mjs --format=esm",
+    "build": "node init && npm run build:wasm && npm run build:sdk",
+    "build:wasm": "node init && cd ../../../crates/rvlite && wasm-pack build --target web --release && cp -r pkg/* ../../npm/packages/rvlite/dist/wasm/",
+    "build:sdk": "node init && tsc && esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --format=cjs && esbuild src/index.ts --bundle --platform=node --outfile=dist/index.mjs --format=esm",
     "test": "node --test test/*.test.js",
     "prepublishOnly": "npm run build"
   },

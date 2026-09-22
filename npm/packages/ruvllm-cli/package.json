@@ -20,7 +20,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "node init && tsc",
     "prepublishOnly": "npm run build",
     "test": "node --test test/*.test.js",
     "typecheck": "tsc --noEmit",

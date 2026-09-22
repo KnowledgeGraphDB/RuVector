@@ -37,11 +37,11 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
-    "build:generators": "tsup src/generators/index.ts --format esm,cjs --dts --out-dir dist/generators",
-    "build:schemas": "tsup src/schemas/index.ts --format esm,cjs --dts --out-dir dist/schemas",
-    "build:all": "npm run build && npm run build:generators && npm run build:schemas",
-    "dev": "tsup src/index.ts --format esm --watch",
+    "build": "node init && tsup src/index.ts --format esm,cjs --dts --clean",
+    "build:generators": "node init && tsup src/generators/index.ts --format esm,cjs --dts --out-dir dist/generators",
+    "build:schemas": "node init && tsup src/schemas/index.ts --format esm,cjs --dts --out-dir dist/schemas",
+    "build:all": "node init && npm run build && npm run build:generators && npm run build:schemas",
+    "dev": "node init && tsup src/index.ts --format esm --watch",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",

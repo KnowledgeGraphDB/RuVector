@@ -38,11 +38,11 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean && chmod +x bin/cli.js",
-    "build:generators": "tsup src/generators/index.ts --format esm,cjs --dts --out-dir dist/generators",
-    "build:cache": "tsup src/cache/index.ts --format esm,cjs --dts --out-dir dist/cache",
-    "build:all": "npm run build && npm run build:generators && npm run build:cache",
-    "dev": "tsup src/index.ts --format esm --watch",
+    "build": "node init && tsup src/index.ts --format esm,cjs --dts --clean && chmod +x bin/cli.js",
+    "build:generators": "node init && tsup src/generators/index.ts --format esm,cjs --dts --out-dir dist/generators",
+    "build:cache": "node init && tsup src/cache/index.ts --format esm,cjs --dts --out-dir dist/cache",
+    "build:all": "node init && npm run build && npm run build:generators && npm run build:cache",
+    "dev": "node init && tsup src/index.ts --format esm --watch",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",

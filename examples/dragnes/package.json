@@ -5,8 +5,8 @@
   "description": "DrAgnes -- AI-Powered Dermatology Intelligence Platform",
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
+    "dev": "node init && vite dev",
+    "build": "node init && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

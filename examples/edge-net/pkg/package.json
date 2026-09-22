@@ -72,7 +72,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "start": "node cli.js start",
+    "start": "node init && node cli.js start",
     "benchmark": "node cli.js benchmark",
     "info": "node cli.js info",
     "join": "node join.js",

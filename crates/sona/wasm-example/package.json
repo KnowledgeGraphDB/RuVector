@@ -4,9 +4,9 @@
   "description": "SONA WASM Example - Self-Optimizing Neural Architecture in the browser",
   "type": "module",
   "scripts": {
-    "build": "cd .. && wasm-pack build --target web --features wasm --out-dir wasm-example/pkg",
+    "build": "node init && cd .. && wasm-pack build --target web --features wasm --out-dir wasm-example/pkg",
     "serve": "python3 -m http.server 8080",
-    "dev": "npm run build && npm run serve"
+    "dev": "node init && npm run build && npm run serve"
   },
   "keywords": [
     "wasm",

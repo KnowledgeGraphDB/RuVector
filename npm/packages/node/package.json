@@ -21,9 +21,9 @@
     "node": ">= 18"
   },
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc --project tsconfig.esm.json",
-    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "node init && npm run build:esm && npm run build:cjs",
+    "build:esm": "node init && tsc --project tsconfig.esm.json",
+    "build:cjs": "node init && tsc --project tsconfig.cjs.json",
     "prepublishOnly": "npm run build",
     "test": "node --test",
     "clean": "rm -rf dist"

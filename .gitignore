@@ -64,8 +64,6 @@ index.d.ts
 !npm/packages/kge/index.d.ts
 
 # Environment variables and secrets
-.env
-**/.env
 **/.env.local
 **/.env.*.local
 *.key
@@ -206,3 +204,4 @@ crates/ruvector-hailo-cluster/Cargo.lock
 crates/hailort-sys/Cargo.lock
 crates/ruvector-mmwave/Cargo.lock
 node_modules
+config.bat

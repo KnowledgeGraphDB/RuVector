@@ -9,7 +9,7 @@
     "*.d.ts"
   ],
   "scripts": {
-    "build": "cargo build --release",
+    "build": "node init && cargo build --release",
     "test": "cargo test"
   },
   "repository": {

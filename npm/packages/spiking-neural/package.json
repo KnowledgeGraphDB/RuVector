@@ -11,7 +11,7 @@
     "test": "node bin/cli.js test",
     "benchmark": "node bin/cli.js benchmark",
     "demo": "node bin/cli.js demo pattern",
-    "build:native": "node-gyp rebuild",
+    "build:native": "node init && node-gyp rebuild",
     "prepublishOnly": "npm test"
   },
   "keywords": [

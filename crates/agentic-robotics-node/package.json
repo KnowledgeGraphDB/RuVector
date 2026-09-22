@@ -41,7 +41,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "cargo build --release",
+    "build": "node init && cargo build --release",
     "test": "node test.js"
   },
   "files": [

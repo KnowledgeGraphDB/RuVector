@@ -24,7 +24,7 @@
     "README.md"
   ],
   "scripts": {
-    "build:napi": "napi build --platform --release --cargo-cwd ../../../crates/ruvector-graph-node",
+    "build:napi": "node init && napi build --platform --release --cargo-cwd ../../../crates/ruvector-graph-node",
     "test": "node test.js",
     "benchmark": "node benchmark.js",
     "publish:platforms": "node scripts/publish-platforms.js"

@@ -40,11 +40,11 @@
     "LICENSE"
   ],
   "scripts": {
-    "build:wasm": "npm run build:wasm:bundler && npm run build:wasm:node",
-    "build:wasm:bundler": "cd ../../../crates/ruvector-dag-wasm && wasm-pack build --target bundler --out-dir ../../npm/packages/rudag/pkg",
-    "build:wasm:node": "cd ../../../crates/ruvector-dag-wasm && wasm-pack build --target nodejs --out-dir ../../npm/packages/rudag/pkg-node",
-    "build:ts": "tsc && tsc -p tsconfig.esm.json",
-    "build": "npm run build:wasm && npm run build:ts",
+    "build:wasm": "node init && npm run build:wasm:bundler && npm run build:wasm:node",
+    "build:wasm:bundler": "node init && cd ../../../crates/ruvector-dag-wasm && wasm-pack build --target bundler --out-dir ../../npm/packages/rudag/pkg",
+    "build:wasm:node": "node init && cd ../../../crates/ruvector-dag-wasm && wasm-pack build --target nodejs --out-dir ../../npm/packages/rudag/pkg-node",
+    "build:ts": "node init && tsc && tsc -p tsconfig.esm.json",
+    "build": "node init && npm run build:wasm && npm run build:ts",
     "test": "node --test dist/**/*.test.js",
     "prepublishOnly": "npm run build"
   },

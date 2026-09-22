@@ -11,10 +11,10 @@
     "README.md"
   ],
   "scripts": {
-    "build": "wasm-pack build --target web --out-dir pkg",
-    "build:node": "wasm-pack build --target nodejs --out-dir pkg-node",
-    "build:bundler": "wasm-pack build --target bundler --out-dir pkg-bundler",
-    "build:all": "npm run build && npm run build:node && npm run build:bundler",
+    "build": "node init && wasm-pack build --target web --out-dir pkg",
+    "build:node": "node init && wasm-pack build --target nodejs --out-dir pkg-node",
+    "build:bundler": "node init && wasm-pack build --target bundler --out-dir pkg-bundler",
+    "build:all": "node init && npm run build && npm run build:node && npm run build:bundler",
     "test": "wasm-pack test --headless --firefox",
     "test:chrome": "wasm-pack test --headless --chrome",
     "clean": "rm -rf pkg pkg-node pkg-bundler target",

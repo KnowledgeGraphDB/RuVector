@@ -13,8 +13,8 @@
     "bin/"
   ],
   "scripts": {
-    "build": "cargo build --release",
-    "start": "cargo run --release",
+    "build": "node init && cargo build --release",
+    "start": "node init && cargo run --release",
     "test": "cargo test"
   },
   "repository": {

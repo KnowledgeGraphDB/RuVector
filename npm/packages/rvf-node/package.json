@@ -20,7 +20,7 @@
     ]
   },
   "scripts": {
-    "build": "napi build --platform --release"
+    "build": "node init && napi build --platform --release"
   },
   "license": "MIT",
   "repository": {

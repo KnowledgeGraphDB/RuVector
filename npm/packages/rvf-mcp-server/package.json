@@ -1,7 +1,7 @@
 {
   "name": "@ruvector/rvf-mcp-server",
   "version": "0.1.4",
-  "description": "MCP server for RuVector Format (RVF) vector database — stdio and SSE transports",
+  "description": "MCP server for RuVector Format (RVF) vector database \u2014 stdio and SSE transports",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,11 +15,11 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/cli.js",
-    "start:stdio": "node dist/cli.js --transport stdio",
-    "start:sse": "node dist/cli.js --transport sse --port 3100",
-    "dev": "tsc --watch"
+    "build": "node init && tsc",
+    "start": "node init && node dist/cli.js",
+    "start:stdio": "node init && node dist/cli.js --transport stdio",
+    "start:sse": "node init && node dist/cli.js --transport sse --port 3100",
+    "dev": "node init && tsc --watch"
   },
   "keywords": [
     "rvf",

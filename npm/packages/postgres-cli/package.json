@@ -10,8 +10,8 @@
     "rvpg": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "node init && tsc",
+    "dev": "node init && tsc --watch",
     "clean": "rm -rf dist *.tsbuildinfo",
     "test": "node --test tests/*.test.js",
     "typecheck": "tsc --noEmit",

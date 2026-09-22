@@ -1,14 +1,14 @@
 {
   "name": "@ruvector/pi-brain",
   "version": "0.1.2",
-  "description": "CLI and SDK for π — the RuVector shared brain. Share, search, and transfer learning across AI sessions.",
+  "description": "CLI and SDK for \u03c0 \u2014 the RuVector shared brain. Share, search, and transfer learning across AI sessions.",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "pi-brain": "dist/cli.js",
-    "π": "dist/cli.js"
+    "\u03c0": "dist/cli.js"
   },
   "exports": {
     ".": {
@@ -32,14 +32,22 @@
     "dist"
   ],
   "scripts": {
-    "build:esm": "tsc -p tsconfig.json",
-    "build:cjs": "tsc -p tsconfig.cjs.json && node -e \"require('fs').writeFileSync('dist/cjs/package.json', JSON.stringify({type:'commonjs'}))\"",
-    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "node init && tsc -p tsconfig.json",
+    "build:cjs": "node init && tsc -p tsconfig.cjs.json && node -e \"require('fs').writeFileSync('dist/cjs/package.json', JSON.stringify({type:'commonjs'}))\"",
+    "build": "node init && npm run build:esm && npm run build:cjs",
     "prepack": "npm run build",
-    "start": "node dist/cli.js",
-    "dev": "tsc --watch"
+    "start": "node init && node dist/cli.js",
+    "dev": "node init && tsc --watch"
   },
-  "keywords": ["pi", "brain", "ruvector", "mcp", "shared-learning", "claude", "ai"],
+  "keywords": [
+    "pi",
+    "brain",
+    "ruvector",
+    "mcp",
+    "shared-learning",
+    "claude",
+    "ai"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",

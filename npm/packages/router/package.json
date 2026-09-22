@@ -24,7 +24,7 @@
     "README.md"
   ],
   "scripts": {
-    "build:napi": "napi build --platform --release --cargo-cwd ../../../crates/ruvector-router-ffi",
+    "build:napi": "node init && napi build --platform --release --cargo-cwd ../../../crates/ruvector-router-ffi",
     "test": "node test.js",
     "publish:platforms": "node scripts/publish-platforms.js"
   },

@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "node init && tsc",
     "prepack": "npm run build && node -e \"for(const f of ['index','agent-coordinator','regional-agent','swarm-manager','coordination-protocol'])if(!require('fs').existsSync('dist/'+f+'.js'))throw new Error('missing dist/'+f+'.js')\"",
     "test": "jest --coverage",
     "test:watch": "jest --watch",

@@ -5,7 +5,7 @@
   "main": "dist/simulator.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "node init && tsc",
     "simulate": "node --loader ts-node/esm src/simulator.ts",
     "simulate:fast": "node --loader ts-node/esm src/simulator.ts --fast",
     "simulate:verbose": "node --loader ts-node/esm src/simulator.ts --verbose",

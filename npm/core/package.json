@@ -16,10 +16,10 @@
     "node": ">= 18"
   },
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs && npm run build:rename-cjs",
-    "build:esm": "tsc --project tsconfig.json",
-    "build:cjs": "tsc --project tsconfig.cjs.json",
-    "build:rename-cjs": "mv dist-cjs/index.cjs.js dist/index.cjs && rm -rf dist-cjs",
+    "build": "node init && npm run build:esm && npm run build:cjs && npm run build:rename-cjs",
+    "build:esm": "node init && tsc --project tsconfig.json",
+    "build:cjs": "node init && tsc --project tsconfig.cjs.json",
+    "build:rename-cjs": "node init && mv dist-cjs/index.cjs.js dist/index.cjs && rm -rf dist-cjs",
     "prepublishOnly": "npm run build",
     "test": "node --test",
     "clean": "rm -rf dist dist-cjs"

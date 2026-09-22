@@ -24,7 +24,7 @@
     "README.md"
   ],
   "scripts": {
-    "build:napi": "napi build --platform --release --cargo-cwd ../../../crates/ruvector-tiny-dancer-node",
+    "build:napi": "node init && napi build --platform --release --cargo-cwd ../../../crates/ruvector-tiny-dancer-node",
     "test": "node test.js"
   },
   "devDependencies": {

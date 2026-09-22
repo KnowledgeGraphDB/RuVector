@@ -15,7 +15,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "wasm-pack build ../../crates/ruvector-cnn-wasm --target web --out-dir ../../npm/packages/ruvector-cnn/pkg",
+    "build": "node init && wasm-pack build ../../crates/ruvector-cnn-wasm --target web --out-dir ../../npm/packages/ruvector-cnn/pkg",
     "postbuild": "cp pkg/* . && rm -rf pkg",
     "test": "node test.js"
   },

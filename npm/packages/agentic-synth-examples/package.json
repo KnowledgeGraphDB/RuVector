@@ -31,10 +31,10 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
-    "build:dspy": "tsup src/dspy/index.ts --format esm,cjs --dts --out-dir dist/dspy",
-    "build:all": "npm run build && npm run build:dspy",
-    "dev": "tsup src/index.ts --format esm --watch",
+    "build": "node init && tsup src/index.ts --format esm,cjs --dts --clean",
+    "build:dspy": "node init && tsup src/dspy/index.ts --format esm,cjs --dts --out-dir dist/dspy",
+    "build:all": "node init && npm run build && npm run build:dspy",
+    "dev": "node init && tsup src/index.ts --format esm --watch",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
